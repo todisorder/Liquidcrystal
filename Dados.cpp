@@ -39,8 +39,8 @@ void Dados::set (void)
 	int option = 0;
 
 	if (option == 0) {
-		tfinal = 0.2;
-		numpt =3500;
+		tfinal = 0.4;
+		numpt =1000;
 //		numiter = 200;
 		dt = 0.00005;
 		numiter = tfinal/dt;
@@ -50,7 +50,7 @@ void Dados::set (void)
 		delta = .05*dx;
 		eps = .05*dx;		//viscosidade
         aa = 10.;
-        HH = 1.;
+        HH = 10.;
         alpha = .3;
         beta = 0.29;
         gamma = .1;

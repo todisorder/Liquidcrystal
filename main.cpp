@@ -134,7 +134,7 @@ int main () {
 		int tresD = 1;		//0 --> no 3D; 1 --> 3D yes.		
 		if (tresD == 1) {
 			int samplt = numiter/min(numiter,20);		//Para ficar com x ptos em tempo
-			int samplx = numpt/min(numpt,200);			//Para ficar com x ptos em espaço
+			int samplx = numpt/min(numpt,1000);			//Para ficar com x ptos em espaço
 			if (i%samplt == 0) {	//Escrever no fich3d só de x em x iterações
                 for (int j = 0; j <= numpt - 1; j=j+samplx)    //e só de y em y pontos espaciais
                 {
