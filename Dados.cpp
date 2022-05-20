@@ -39,22 +39,22 @@ void Dados::set (void)
 	int option = 0;
 
 	if (option == 0) {
-		tfinal = 0.4;
-		numpt =1000;
+		tfinal = 1.5;
+		numpt =600;
 //		numiter = 200;
-		dt = 0.00005;
+		dt = 0.0001;
 		numiter = tfinal/dt;
 		xmin = -15.;
 		xmax = 15.;				//Calculado implicitamente
 		dx = (xmax - xmin)/numpt;		
 		delta = .05*dx;
 		eps = .05*dx;		//viscosidade
-        aa = 10.;
-        HH = 10.;
-        alpha = .3;
-        beta = 0.29;
-        gamma = .1;
-        bb = 1.;
+        aa = 2.;
+        HH = 4.;
+        alpha = 10.3;
+        beta = 10.29;
+        gamma = 10.1;
+        bb = 10.;
 	}
 	if (option == 1 && dadosdefinidos == 0) {
 		cout << "numpt? "<< endl;

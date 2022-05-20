@@ -189,9 +189,9 @@ Complex FuncRKWW(Dados *data, const Complex rjm, const Complex rj, const Complex
     Complex Fmais = Flux((rjj-rj)/dx,alpha,beta,gamma);
     Complex Fmenos = Flux((rj-rjm)/dx,alpha,beta,gamma);
     
-	Complex tempo = 1.*(1./dx)*(Fmais - Fmenos) +  (eps/(dx*dx))*(wjm - 2.*wj + wjj) - bb*rj + Complex(10.,0.)*norm(uj);
+	Complex tempo = Complex(1.,0.)*(1./dx)*(Fmais - Fmenos) +  Complex(1.,0.)*(eps/(dx*dx))*(wjm - 2.*wj + wjj) - Complex(1.,0.)*bb*rj + Complex(1.,0.)*norm(uj);
 	
-	return tempo;	
+	return Complex(1.,0.)*tempo;
 }
 
 void Solver_Visc::RKVISC(Dados *data, double tcurrent){
@@ -256,7 +256,7 @@ void Solver_Visc::RKVISC(Dados *data, double tcurrent){
 	}
 	
 	for (int i=1; i<dim-2; i++) {
-		kapatres.comps[i] = dt*(FuncRKWW(data, RR.comps[i-1], RR.comps[i], RR.comps[i+1], WW.comps[i-1]+kapatres.comps[i-1], WW.comps[i]+kapatres.comps[i], WW.comps[i+1]+kapatres.comps[i+1], UU.comps[i], tcurrent));
+		kapaquatro.comps[i] = dt*(FuncRKWW(data, RR.comps[i-1], RR.comps[i], RR.comps[i+1], WW.comps[i-1]+kapatres.comps[i-1], WW.comps[i]+kapatres.comps[i], WW.comps[i+1]+kapatres.comps[i+1], UU.comps[i], tcurrent));
 	}
 	
 	for (int i=1; i<dim-2; i++) {

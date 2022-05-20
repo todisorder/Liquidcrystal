@@ -32,8 +32,8 @@ with open('Sols/SolVV.txt', 'r') as f:
     y = [float(line.split()[1]) for line in lines]
 plt.plot(x ,y,'-',lw=1,c='black')
 
-plt.xlim(-2.5,12.1)
-#fig.savefig("sol.png",dpi=500)
+plt.xlim(-12,12.1)
+fig.savefig("sol.png",dpi=500)
 
 
 
